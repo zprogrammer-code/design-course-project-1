@@ -244,6 +244,10 @@ body {
   -webkit-background-clip: text;
   color: transparent;
 }
+#gf {
+  font-size: 8rem;
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
