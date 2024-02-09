@@ -4,7 +4,8 @@
     padding: 2.5rem;
     text-align: center;
     border-radius: 3px;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    box-shadow: $box-shadow-1;
+    transform: transform .3s;
 
     &__icon {
         font-size: 6rem;
@@ -15,9 +16,10 @@
         color: transparent;
     }
 
-    &__text {
-
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
     }
+
 }
 
 #gf {
