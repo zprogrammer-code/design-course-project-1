@@ -1,16 +1,37 @@
 .header {
-    height: 95vh;
+    height: 85vh;
     background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-light, 0.8),
         rgba($color-primary-dark, 0.8)),
-        url(../img/hero.jpg);
+        url(../img/hero-small.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
+
+    //  \/ divide the min-width with 16 to get em
+
+    @media (min-resolution: 192dpi) and (mid-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($color-primary-light, 0.8),
+            rgba($color-primary-dark, 0.8)),
+            url(../img/hero.jpg );
+    }
+
+  
+
+    //^^^^ switch gradient color for each photo so that you know which one is being used for responsive images
     @include respond(phone) {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 83vh, 0 95%);
         clip-path: polygon(0 0, 100% 0, 100% 83vh, 0 95%);
